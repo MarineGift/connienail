@@ -7,7 +7,7 @@ interface LocaleLayoutProps {
   }
 }
 
-export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
+export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   return (
     <html lang={params.locale}>
       <body>{children}</body>
