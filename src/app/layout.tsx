@@ -4,24 +4,18 @@ import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
-interface LocaleLayoutProps {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}
-
 export const metadata: Metadata = {
   title: "Connie's Nail - Premium Nail Salon",
   description: 'Professional nail care and AI-powered nail art design service',
 };
 
-export default async function LocaleLayout({
+export default function RootLayout({
   children,
-  params,
-}: LocaleLayoutProps) {
-  const { locale } = await params;
-
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang={locale}>
+    <html lang="ko">
       <body className={inter.className}>{children}</body>
     </html>
   );
