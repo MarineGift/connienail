@@ -1,18 +1,25 @@
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import '../../styles/globals.css';  // 수정된 상대 경로
 
-export default async function LocaleLayout({
-  children,
-  params: { locale }
-}: {
+const inter = Inter({ subsets: ['latin'] });
+
+export const metadata: Metadata = {
+  title: "Connie's Nail - Premium Nail Salon",
+  description: 'Professional nail care and AI-powered nail art design service',
+};
+
+type Props = {
   children: React.ReactNode;
-  params: { locale: string };
-}) {
-  const messages = await getMessages();
+  params: {
+    locale: string;
+  };
+};
 
+export default function LocaleLayout({ children, params }: Props) {
   return (
-    <NextIntlClientProvider messages={messages}>
-      {children}
-    </NextIntlClientProvider>
+    <html lang={params.locale}>
+      <body className={inter.className}>{children}</body>
+    </html>
   );
 }
