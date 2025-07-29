@@ -1,9 +1,13 @@
-import { ReactNode } from 'react';
 import '../../styles/globals.css';
+import { ReactNode } from 'react';
 
-export default async function LocaleLayout({
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'ko' }];
+}
+
+export default function LocaleLayout({
   children,
-  params
+  params,
 }: {
   children: ReactNode;
   params: { locale: string };
