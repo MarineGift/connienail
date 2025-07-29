@@ -1,8 +1,10 @@
-import '../../globals.css'
+import '../globals.css'
 
-type LocaleLayoutProps = {
+interface LocaleLayoutProps {
   children: React.ReactNode
-  params: { locale: string }
+  params: {
+    locale: string
+  }
 }
 
 export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
