@@ -1,0 +1,34 @@
+# Caddy 관련 모든 파일 무시
+*caddy*
+*Caddy*
+*CADDY*
+caddy
+Caddy
+CADDY
+Caddyfile
+caddyfile
+*.caddy
+caddy.json
+caddy.yaml
+
+# 서버 실행 파일들 무시
+server
+Server
+main
+Main
+app
+App
+
+# Go 파일들 무시
+*.go
+go.mod
+go.sum
+
+# Docker 파일들 무시
+Dockerfile*
+docker-compose*
+
+# 기타 서버 설정 파일들 무시
+nginx.conf
+apache.conf
+*.conf
