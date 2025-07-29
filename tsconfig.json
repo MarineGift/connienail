@@ -1,7 +1,7 @@
 {
   "include": ["client/src/**/*", "shared/**/*", "server/**/*"],
   "exclude": ["node_modules", "build", "dist", "**/*.test.ts"],
-  "compilerOptions": {
+"compilerOptions": {
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -16,7 +16,7 @@
     "jsx": "preserve",
     "baseUrl": ".",                     
     "paths": {
-      "@/*": ["src/*"]             
+      "@/*": ["src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
