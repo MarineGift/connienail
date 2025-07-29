@@ -1,20 +1,13 @@
-import '../../globals.css'
-import type { ReactNode } from 'react'
-import type { Metadata } from 'next'
+import '../globals.css'
 
-export const metadata: Metadata = {
-  title: "Connie's Nail - Premium Nail Salon",
-  description: 'Professional nail care and AI-powered nail art design service',
-}
-
-type LocaleLayoutProps = {
-  children: ReactNode
+interface LocaleLayoutProps {
+  children: React.ReactNode
   params: {
     locale: string
   }
 }
 
-export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
+export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   return (
     <html lang={params.locale}>
       <body>{children}</body>
