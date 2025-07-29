@@ -1,22 +1,25 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import '../../globals.css'; // 상대 경로로 globals.css를 불러옴
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "Connie's Nail - Premium Nail Salon",
   description: 'Professional nail care and AI-powered nail art design service',
-}
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+type Props = {
+  children: React.ReactNode;
+  params: {
+    locale: string;
+  };
+};
+
+export default function LocaleLayout({ children, params }: Props) {
   return (
-    <html lang="ko">
+    <html lang={params.locale}>
       <body className={inter.className}>{children}</body>
     </html>
-  )
+  );
 }
