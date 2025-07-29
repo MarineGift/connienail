@@ -1,12 +1,6 @@
 import '../globals.css'
-import { ReactNode } from 'react'
 
-interface LayoutProps {
-  children: ReactNode
-  params: { locale: string }
-}
-
-export default function LocaleLayout({ children, params }: LayoutProps) {
+export default async function LocaleLayout({ children, params }) {
   return (
     <html lang={params.locale}>
       <body>{children}</body>
