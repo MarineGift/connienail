@@ -1,5 +1,6 @@
 [build]
 builder = "nixpacks"
+buildCommand = "npm ci && npm run build"
 
 [deploy]
 startCommand = "npm start"
@@ -7,5 +8,10 @@ healthcheckPath = "/"
 healthcheckTimeout = 300
 restartPolicyType = "on_failure"
 
-[experimental]
-nixpacksVersion = "1.22.0"
+[variables]
+NIXPACKS_NODE_VERSION = "18"
+NIXPACKS_INSTALL_CMD = "npm ci"
+NIXPACKS_BUILD_CMD = "npm run build"
+NIXPACKS_START_CMD = "npm start"
+FORCE_NODE = "true"
+NODE_ENV = "production"
