@@ -1,34 +1,19 @@
-# Caddy 관련 모든 파일 무시
-*caddy*
-*Caddy*
-*CADDY*
-caddy
-Caddy
-CADDY
-Caddyfile
-caddyfile
-*.caddy
-caddy.json
-caddy.yaml
+[providers]
+nodejs = { }
 
-# 서버 실행 파일들 무시
-server
-Server
-main
-Main
-app
-App
+[variables]
+NODE_VERSION = "18"
+NODE_ENV = "production"
+PORT = "3000"
 
-# Go 파일들 무시
-*.go
-go.mod
-go.sum
+[phases.setup]
+nixPkgs = ["nodejs-18_x", "npm"]
 
-# Docker 파일들 무시
-Dockerfile*
-docker-compose*
+[phases.install]
+cmd = "npm ci"
 
-# 기타 서버 설정 파일들 무시
-nginx.conf
-apache.conf
-*.conf
+[phases.build]
+cmd = "npm run build"
+
+[phases.start]
+cmd = "npm start"
