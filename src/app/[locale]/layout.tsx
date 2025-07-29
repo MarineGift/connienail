@@ -1,20 +1,17 @@
 import '../../styles/globals.css';
+import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { ReactNode } from 'react';
 
-export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'ko' }];
-}
+export default function LocaleLayout({ children }: { children: ReactNode }) {
+  const messages = useMessages();
 
-export default function LocaleLayout({
-  children,
-  params,
-}: {
-  children: ReactNode;
-  params: { locale: string };
-}) {
   return (
-    <html lang={params.locale}>
-      <body>{children}</body>
+    <html lang="en">
+      <body>
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
     </html>
   );
 }
