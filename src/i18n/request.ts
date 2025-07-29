@@ -3,10 +3,22 @@ import { getRequestConfig } from 'next-intl/server';
 export default getRequestConfig(async ({ locale }) => {
   // locale 기본값 및 유효성 검사
   const supportedLocales = ['ko', 'en', 'ja', 'es'];
-  const validLocale = locale && supportedLocales.includes(locale) ? locale : 'ko';
-
-  return {
-    locale: validLocale, // 항상 string 타입 보장
-    messages: (await import(`../../messages/${validLocale}.json`)).default
-  };
+  const validLocale = supportedLocales.includes(locale) ? locale : 'ko';
+  
+  console.log('Loading locale:', validLocale);
+  
+  try {
+    const messages = await import(`../locales/${validLocale}.json`);
+    return { 
+      messages: messages.default,
+      locale: validLocale
+    };
+  } catch (error) {
+    console.log(`Loading fallback for locale: ${locale}`, error);
+    const messages = await import(`../locales/ko.json`);
+    return { 
+      messages: messages.default,
+      locale: 'ko'
+    };
+  }
 });
