@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
     "target": "esnext",
+<<<<<<< HEAD
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+=======
+    "lib": ["dom", "dom.iterable", "esnext"],
+>>>>>>> 2d8b3495d4ac1c966e5036f9bb4c7fcf1db7148e
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -16,6 +20,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+<<<<<<< HEAD
     "baseUrl": ".",
     "paths": {
       "@/*": [
@@ -38,3 +43,13 @@
     "**/*.test.ts"
   ]
 }
+=======
+    "baseUrl": ".", 
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
+>>>>>>> 2d8b3495d4ac1c966e5036f9bb4c7fcf1db7148e
