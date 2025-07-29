@@ -1,0 +1,14 @@
+Dockerfile
+docker-compose.yml
+Caddyfile
+*.go
+.git
+.gitignore
+README.md
+.env
+.env.local
+.env.production.local
+.env.local
+node_modules
+.next
+.vercel
