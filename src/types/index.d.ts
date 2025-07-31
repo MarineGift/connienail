@@ -1,6 +1,4 @@
-import { ReactNode } from 'react';
-
-export type LayoutProps<T = {}> = {
-  children: ReactNode;
+export interface LayoutProps<T = {}> {
+  children: React.ReactNode;
   params: T;
-};
+}

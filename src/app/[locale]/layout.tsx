@@ -1,4 +1,4 @@
-import type { LayoutProps } from '@/types';
+import type { LayoutProps } from '../../types';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
