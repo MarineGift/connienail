@@ -1,6 +1,26 @@
 {
-  "HomePage": {
+  "navigation": {
+    "home": "홈",
+    "about": "소개",
     "services": "서비스",
-    "gallery": "갤러리"
+    "contact": "연락처"
+  },
+  "home": {
+    "title": "코니 네일",
+    "subtitle": "전문적인 네일 케어 서비스",
+    "cta": "예약하기"
+  },
+  "auth": {
+    "login": "로그인",
+    "email": "이메일",
+    "password": "비밀번호",
+    "loading": "로딩 중...",
+    "success": "로그인 성공!",
+    "error": "로그인 중 오류가 발생했습니다"
+  },
+  "common": {
+    "welcome": "환영합니다",
+    "loading": "로딩 중...",
+    "error": "오류가 발생했습니다"
   }
 }
