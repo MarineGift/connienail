@@ -1,0 +1,26 @@
+{
+  "navigation": {
+    "home": "ホーム",
+    "about": "について",
+    "services": "サービス",
+    "contact": "お問い合わせ"
+  },
+  "home": {
+    "title": "コニーネイル",
+    "subtitle": "プロフェッショナルなネイルケアサービス",
+    "cta": "予約する"
+  },
+  "auth": {
+    "login": "ログイン",
+    "email": "メール",
+    "password": "パスワード",
+    "loading": "読み込み中...",
+    "success": "ログイン成功！",
+    "error": "ログイン中にエラーが発生しました"
+  },
+  "common": {
+    "welcome": "ようこそ",
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました"
+  }
+}
