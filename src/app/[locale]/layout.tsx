@@ -1,15 +1,14 @@
-import { NextIntlClientProvider, useMessages } from 'next-intl';
+interface LayoutProps {
+  children: React.ReactNode;
+  params: {
+    locale: string;
+  };
+}
 
-export default function LocaleLayout({ children, params: { locale } }) {
-  const messages = useMessages();
-
+export default function RootLayout({ children, params }: LayoutProps) {
   return (
-    <html lang={locale}>
-      <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-      </body>
+    <html lang={params.locale}>
+      <body>{children}</body>
     </html>
   );
 }
