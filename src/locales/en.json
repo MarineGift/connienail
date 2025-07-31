@@ -1,6 +1,26 @@
 {
-  "HomePage": {
+  "navigation": {
+    "home": "Home",
+    "about": "About",
     "services": "Services",
-    "gallery": "Gallery"
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Connie Nail",
+    "subtitle": "Professional nail care services",
+    "cta": "Book Now"
+  },
+  "auth": {
+    "login": "Login",
+    "email": "Email",
+    "password": "Password",
+    "loading": "Loading...",
+    "success": "Login successful!",
+    "error": "An error occurred during login"
+  },
+  "common": {
+    "welcome": "Welcome",
+    "loading": "Loading...",
+    "error": "An error occurred"
   }
 }
