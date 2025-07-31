@@ -1,11 +1,10 @@
-interface LayoutProps {
+export default function RootLayout({
+  children,
+  params,
+}: {
   children: React.ReactNode;
-  params: {
-    locale: string;
-  };
-}
-
-export default function RootLayout({ children, params }: LayoutProps) {
+  params: { locale: string };
+}) {
   return (
     <html lang={params.locale}>
       <body>{children}</body>
