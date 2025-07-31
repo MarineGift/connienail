@@ -1,28 +1,10 @@
-import type { LayoutProps } from '../../types';
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import { notFound } from 'next/navigation';
+import { NextIntlClientProvider, useMessages } from 'next-intl';
 
-export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'ko' }];
-}
-
-export default async function LocaleLayout(props: LayoutProps<{ locale: string }>) {
-  const { children, params } = props;
-  const { locale } = params;
-
-  let messages;
-  try {
-    messages = await getMessages({ locale });
-  } catch (error) {
-    notFound();
-  }
+export default function LocaleLayout({ children, params: { locale } }) {
+  const messages = useMessages();
 
   return (
     <html lang={locale}>
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-      </head>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
